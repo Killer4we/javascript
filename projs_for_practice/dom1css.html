@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+    <style>
+        .btn{
+            color: white;
+            background-color: black;
+            border-radius: 20px;
+            padding: 5px;
+            width: 90px;
+            border: none;
+        }
+        .btn:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p class="js-p">YouTube Subscribe Button</p>
+    <button class="btn" onclick="
+        let value = document.body.querySelector('.btn').innerHTML;
+        // console.log(value);
+        check(value);
+    ">Subscribe</button>
+    <script>
+        function check(value){
+            // console.log(value);
+            if(value=="Subscribe"){
+                // console.log(value);
+                document.body.querySelector('.btn').innerHTML = 'Subscribed';
+            }
+            else{
+                document.body.querySelector('.btn').innerHTML = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>
