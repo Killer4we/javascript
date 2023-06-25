@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .btn:hover{
+            cursor: pointer;
+        }
+        .button:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Hello</button>
+    <button class="button">Sec Button</button>
+    <script>
+        //Dom properties
+        console.log(document.title);
+        document.title = 'Lmao';
+        // console.log(document.body.innerHTML);
+        // document.body.innerHTML = '<button>Lmao</button>'
+        // console.log(document.querySelector('button').innerHTML);
+        //query selector will select a specific element
+        
+        document.querySelector('.button').innerHTML = 'Sec button html changed';
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proj</title>
+    <style>
+        .btn:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Youtube subscribe button</p>
+    <button class="btn" onclick="
+    let value = document.body.querySelector('.btn').innerHTML;
+    checkVal(value)">Subscribe</button>
+    <script>
+        // let value = document.body.querySelector('.btn').innerHTML;
+        function checkVal(value){
+            if (value=='Subscribe'){
+                document.body.querySelector('.btn').innerHTML = 'Subscribed';
+            }
+            else{
+                document.body.querySelector('.btn').innerHTML = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

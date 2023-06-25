@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        let product = {
+            name: 'Abhinav',
+            age: 18,
+            'delivery-time':14
+        };
+        // console.log(product);
+        // console.log(product.name); 
+        // console.log(product.age);
+        product.newProperty = 'DAmn';
+        console.log(product);
+        //we use bracket notation whenever we access string types
+        console.log(product['delivery-time']);
+        //let's create a nested object
+        let item = {
+            name: 'shirt',
+            price:180,
+            'delivery-time': 19,
+            rating: {
+                stars:4.5,
+                count:87
+            }
+        };
+        //accessing the properties
+        console.log(item['name']);
+        console.log(item.rating['stars']);
+        
+        //JSON model
+        console.log(JSON.stringify(item));    
+        
+        let amazon= {
+            name:'Basketball',
+            price:2095
+        };
+        amazon['delivery-time'] = 3;
+        console.log(amazon);
+
+        let product1={
+            name: 'obj1',
+            price:180
+        };
+        let product2={
+            name: 'obj2',
+            price:190
+        };
+        function compareProduct(product1,product2){
+            if(product1.price<product2.price){
+                return product1.name;
+            }
+            else{
+                return product2.name;
+            }
+        }
+        let string1 = compareProduct(product1,product2);
+        console.log(string1 + ' has low price');
+    </script>
+</body>
+</html>

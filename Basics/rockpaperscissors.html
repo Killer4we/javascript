@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockpaper</title>
+    <style>
+        .btn:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" onclick="
+        userval = 'rock';
+        computerval = compValue();
+        playGame(userval,computerval); 
+        ">Rock</button>
+    <button class="btn" onclick="
+        userval = 'paper';
+        computerval = compValue();
+        playGame(userval,computerval);
+    ">Paper</button>
+    <button class="btn" onclick="
+        userval = 'scissor';
+        computerval = compValue();
+        playGame(userval,computerval);
+    ">Scissors</button>
+    <button class="btn" onclick="
+        counter.wins=0;
+        counter.loss=0;
+        counter.draws=0;
+    ">Reset</button>
+    <script>
+        // let counter = JSON.parse(localStorage.getItem('score'));
+        // localStorage.getItem('score',JSON.stringify('score',counter));
+        // let counter = localStorage.getItem(JSON.parse('score'));
+        let counter = JSON.parse(localStorage.getItem('counter'));
+        let userval=''
+        let computerval = ''
+        function compValue(){
+            let computer='';
+            let number = Math.random();
+            if(number<=0.3){
+                computer='rock';
+            }
+            else if(number>0.3&&number<0.6){
+                computer='paper';
+            }
+            else{
+                computer='scissor';
+            }
+            return computer;
+        }
+        function playGame(user,computer){
+            if(user=='rock'&&computer=='scissor'){
+                counter.wins++;
+                alert('You win \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+                
+            }
+            else if(user=='rock'&&computer=='paper'){
+                counter.loss++;
+                alert('You lose \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+
+            }
+            else if(user=='rock'&&computer=='rock'){
+                counter.draws++;
+                alert('It\'s a draw \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+            }
+            else if(user=='paper'&&computer=='scissor'){
+                counter.loss++;
+                alert('You lose \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+
+            }
+            else if(user=='paper'&&computer=='rock'){
+                counter.wins++;
+                alert('You win \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+            }
+            else if(user=='paper'&&computer=='paper'){
+                counter.draws++;
+                alert('It\'s a draw \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+
+            }
+            else if(user=='scissor'&&computer=='scissor'){
+                counter.draws++;
+                alert('It\'s a draw \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+
+            }
+            else if(user=='scissor'&&computer=='paper'){
+                counter.wins++;
+                alert('You win \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+            }
+            else if(user=='scissor'&&computer=='rock'){
+                counter.loss++;
+                alert('You lose \n Wins: ' + counter.wins + ' loss: ' + counter.loss + ' draw: ' + counter.draws);
+            }
+        }
+       
+        localStorage.setItem('counter',JSON.stringify(counter)); 
+    </script>
+</body>
+</html>
