@@ -50,7 +50,22 @@
         }
         function calcEvent(event){
             if(event.key=='Enter'){
-                calculate();
+                //To check whether we are receiving enter key or not
+                let answer = 10;
+                const value1 = document.body.querySelector('.js-input').value;
+                if(!value1){
+                    alert('Enter Something');
+                }
+                if(value1>40){
+                    answer = value1;
+                }
+                else{
+                    answer = answer + Number(value1);
+                }
+                // return answer;
+                document.body.querySelector('.js-p').innerHTML = '$' + answer;
+
+                // console.log('HI');
             }
         }
     </script>

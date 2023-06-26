@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+
+    
+    <!-- CSS -->
+
+    
+    <style>
+        *{
+            background-color: rgb(25,25,25);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+       .move{
+        cursor: pointer;
+        border-color: white;
+        border-radius: 50px;
+        padding: 20px;
+       }
+    </style>
+
+
+
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <button class="move" onclick="
+    let userval = 'Rock';
+    checkval(userval);
+    ">Rock</button>
+    <button class="move" onclick="
+    let userval1 = 'Paper';
+    checkval(userval1);
+    ">Paper</button>
+    <button class="move"
+    onclick="
+    let userval2 = 'Scissor';
+    checkval(userval2);
+    ">Scissors</button>
+    <button class="move" onclick="resetVal();">Reset</button>
+    <p class="js-p"></p>
+    <p class="js-p-counter"></p>
+
+
+
+    <!-- Javascript -->
+
+    <script>
+        let score = {
+            Wins:0,
+            loss:0,
+            Draw:0
+        };
+        function resetVal(){
+            score.Wins=0;
+            score.loss=0;
+            score.Draw=0;
+            document.body.querySelector('.js-p').innerHTML = 'The score was reset';
+            document.body.querySelector('.js-p-counter').innerHTML = 'Wins : ' + score.Wins + ' loss: ' + score.loss + ' Draws: ' + score.Draw;
+        }
+        function checkval(value){
+            let computer = '';
+            let number = Math.random();
+            if(number<=0.3){
+                computer = 'Rock';
+            }
+            else if(number>0.3 && number<0.6){
+                computer='Paper';
+            }
+            else{
+                computer = 'Scissor';
+            }
+            if(value=='Rock' &&computer=='Rock'){
+                score.Draw++;
+                document.body.querySelector('.js-p').innerHTML = 'This was a draw';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+            }
+            else if(value=='Rock' &&computer=='Paper'){
+                score.loss++;
+                document.body.querySelector('.js-p').innerHTML = 'You Lose';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+            }
+            else if(value=='Rock' &&computer=='Scissor'){
+                score.Wins++;
+                document.body.querySelector('.js-p').innerHTML = 'You Win';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+            }
+            else if(value=='Rock' &&computer=='Paper'){
+                score.loss++;
+                document.body.querySelector('.js-p').innerHTML = 'You Lose';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+        }
+            else if(value=='Paper' &&computer=='Paper'){
+                score.Draw++;
+                document.body.querySelector('.js-p').innerHTML = 'Its a draw';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+        }
+        else if(value=='Paper' &&computer=='Rock'){
+                score.Wins++;
+                document.body.querySelector('.js-p').innerHTML = 'You win';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+        }
+        else if(value=='Paper' &&computer=='Scissor'){
+                score.loss++;
+                document.body.querySelector('.js-p').innerHTML = 'Its a draw';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+        }
+        else if(value=='Scissor' &&computer=='Paper'){
+                score.Wins++;
+                document.body.querySelector('.js-p').innerHTML = 'You win';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+        }
+        else if(value=='Scissor' &&computer=='Rock'){
+                score.loss++;
+                document.body.querySelector('.js-p').innerHTML = 'You lose';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+        }
+        else if(value=='Scissor' &&computer=='Scissor'){
+                score.Draw++;
+                document.body.querySelector('.js-p').innerHTML = 'You win';
+                document.body.querySelector('.js-p-counter').innerHTML = 'Wins: ' + score.Wins + ' Loss: ' + score.loss + ' Draws: ' + score.Draw;
+        }
+    }
+    </script>
+    
+</body>
+</html>

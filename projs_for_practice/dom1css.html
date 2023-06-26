@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Practice</title>
     <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
         .btn{
             color: white;
             background-color: black;
             border-radius: 20px;
-            padding: 5px;
-            width: 90px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 15px;
+            padding-left: 15px;
             border: none;
         }
         .btn:hover{
             cursor: pointer;
+        }
+        /* this is a class that will be added and removed only via js */
+        .added-class{
+            cursor: pointer;
+            background-color: rgb(242, 244, 244);
+            color: black;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -28,12 +40,18 @@
     <script>
         function check(value){
             // console.log(value);
+            const buttonelement = document.body.querySelector('.btn');
             if(value=="Subscribe"){
+                
                 // console.log(value);
                 document.body.querySelector('.btn').innerHTML = 'Subscribed';
+                // We are adding a class using js so that we can get some different changes
+                buttonelement.classList.add('added-class');
             }
             else{
                 document.body.querySelector('.btn').innerHTML = 'Subscribe';
+                //We will remove a class using js so that we can revert back to original changes.
+                buttonelement.classList.remove('added-class');
             }
         }
     </script>
