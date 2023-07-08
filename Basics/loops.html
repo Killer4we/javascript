@@ -8,16 +8,40 @@
 <body>
     <script>
         //while loop
-        let i=0;
-        while(i<5){
-            console.log(i);
-            i++;
-        }
+        // let i=0;
+        // while(i<5){
+        //     console.log(i);
+        //     i++;
+        // }
         let array = [12,23,34];
         //for loop
-        for(let i = 0;i<array.length;i++){
-            console.log(array[i]);
+        // for(let i = 0;i<array.length;i++){
+            // console.log(array[i]);
+        // }
+
+        //using break ( break helps us in exiting a loop early)
+
+        for(let i=0;i<=10;i++){
+            if(i==5){
+                console.log('The condition is met so i\'m exiting the loop right now!!');
+                break;
+            }
+            else{
+                console.log(i);
+            }
         }
+        
+        //Continue helps us in skipping a specific condition 
+
+        for (let i=0;i<=10;i++){
+            if(i==5){
+                console.log('I\'m skipping this condition!!!');
+            }
+            else{
+                console.log(i);
+            }
+        }
+        
     </script>
 </body>
 </html>
