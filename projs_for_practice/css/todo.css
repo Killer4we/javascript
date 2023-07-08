@@ -1,0 +1,9 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.js-button:hover{
+    cursor: pointer;
+}
+.js-2-button:hover{
+    cursor: pointer;
+}

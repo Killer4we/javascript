@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/projs_for_practice/css/todo.css">
+    <script src="/projs_for_practice/js/todo.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list</title>
+</head>
+<body>
+    <div class="main">
+        <p class="main-p">Todo List Practice 1</p>
+        <input class="js-inp" placeholder="Todo name">
+        <button class="js-button" onclick="buttonclick();">Add</button>
+        <p class="second-main-p">Todo List Practice 2</p>
+        <input class="js-inp-2" placeholder="Todo name" onkeypress="
+        // console.log(event.key);
+        eventclick(event);
+        changetext();
+        ">
+        <button class="js-button" onclick="secondclick();
+        changetext();
+        // console.log(para)
+        
+        ">Add</button>
+        <p class="main-second"></p>
+    </div>
+</body>
+</html>
