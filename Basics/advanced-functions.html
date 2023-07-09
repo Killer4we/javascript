@@ -17,12 +17,18 @@
 
         //Set timeout function -- This function will set a timer and once the timer is completed it will do the assigned task, the second parameter is the time which is given in ms (1000ms = 1s)
         function func3(){
-            alert('Bruh subscribe fast!');
+            // alert('Bruh subscribe fast!');
         }
-        setTimeout(func3,3000);
-
-
-
+        //Sample out put checking
+        console.log(1);
+        setTimeout(() => {
+            console.log(2);
+        }, 1000);
+        setTimeout(() => {
+            console.log(3);
+        }, 0);
+        console.log(4);
+        console.log(5);
         //Set interval -- This function will do the assigned task after every interval of the given time, the time given is in ms(1000ms=1s)
         
         
