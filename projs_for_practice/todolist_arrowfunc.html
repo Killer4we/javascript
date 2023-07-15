@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrowfunc</title>
+</head>
+<body>
+    <input type="text" class="js-inp" placeholder="Enter a value">
+    <button class="js-btn">Click To Add</button>
+    <script>
+        const inpele = document.body.querySelector('.js-inp');
+        const btnele = document.body.querySelector('.js-btn');
+        const arrow = ()=>{
+            let val = inpele.value;
+            console.log(val);
+            inpele.value = "";
+        }
+        btnele.addEventListener('click',arrow);
+        inpele.addEventListener("keydown",(event)=>{
+            // console.log(event.key);
+            if(event.key==='Enter'){
+                let val = inpele.value;
+                console.log(val);
+            }
+        });
+    </script>
+</body>
+</html>

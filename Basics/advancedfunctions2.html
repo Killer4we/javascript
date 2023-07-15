@@ -6,20 +6,35 @@
     <title>Advanced Functions</title>
 </head>
 <body>
+    <button class="js-btn">Click me</button>
     <script>
-        //Arrow functions=> they work faster than normal functions
-        const arrowFunc = ()=>{
-            console.log("Hello everyone!!");
+        // //Arrow functions=> they work faster than normal functions
+        // const arrowFunc = ()=>{
+        //     console.log("Hello everyone!!");
+        // }
+        // // arrowFunc();
+
+        // //Advantages of using arrow functions, one such advantage is that if there is only one parameter then we dont need to give brackets like this
+
+        // const oneFunc = param1=>{
+        //     console.log(param1+1);
+        // }
+        // // oneFunc(3);
+        // //One more advantage of using arrow function is that if there is only one line then it can be done on the same line and no need of putting brackets,no need of putting return statement also
+        // const secFunc = param1=> 2+3;
+
+
+
+        //Now we'll be using a better method than onclick that is .addEventListener
+        const ele = document.body.querySelector('.js-btn');
+        const arrowFunc1 = ()=>{
+            console.log('You just clicked me');
         }
-        // arrowFunc();
-
-        //Advantages of using arrow functions, one such advantage is that if there is only one parameter then we dont need to give brackets like this
-
-        const oneFunc = param1=>{
-            console.log(param1+1);
-        }
-        oneFunc(3);
-
+        ele.addEventListener('click',arrowFunc1);
+        ele.removeEventListener('click',arrowFunc1);
+        ele.addEventListener('click',()=>{
+            console.log('lmao');
+        })
     </script>
 </body>
 </html>
